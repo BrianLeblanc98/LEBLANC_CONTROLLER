@@ -128,8 +128,8 @@ void loop()
     /* Switch in the UP position */
     
     //   Send controller button input
-    Joystick.setButton(0, button1Val);
-    Joystick.setButton(1, button2Val);
+    Joystick.setButton(12, button1Val);
+    Joystick.setButton(13, button2Val);
     // Joystick.setButton(2, button3Val);
     Joystick.setButton(3, button4Val);
     Joystick.setButton(4, button5Val);
