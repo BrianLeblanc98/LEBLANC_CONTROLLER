@@ -188,6 +188,14 @@ void loop()
     ledCount++;
     if(ledCount > 5)
     {
+      if(ledBState)
+      {
+        rgbLED(255, 102, 255);
+      }
+      else
+      {
+        rgbLED(102, 255, 102);
+      }
       ledBState = !ledBState;
       ledCount = 0;
     }
@@ -201,8 +209,15 @@ void loop()
   digitalWrite(ledBPin, ledBState);
 }
 
-// Function to press a key when a given button is pressed
+// Set color for RGB LED
+void rgbLED(int r, int g, int b)
+{
+  analogWrite(ledRPin, r);
+  analogWrite(ledGPin, g);
+  analogWrite(ledGPin, b);
+}
 
+// Function to press a key when a given button is pressed
 void writeKeyWhenPressed(char key, int buttonVal)
 {
   if(buttonVal)
