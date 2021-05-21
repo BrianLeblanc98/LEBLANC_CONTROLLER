@@ -203,7 +203,7 @@ void loop()
   else
   {
     /* What happens when we DON'T party mode */
-    ledBState = false;
+    rgbLED(0, 0, 0);
   }
 
 
