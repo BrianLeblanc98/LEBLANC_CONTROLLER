@@ -186,11 +186,11 @@ void loop()
   {
     /* What happens when we party mode */
     ledCount++;
-    if(ledCount > 5)
+    if(ledCount > 50)
     {
       if(ledBState)
       {
-        rgbLED(255, 102, 255);
+        rgbLED(102, 151, 0);
       }
       else
       {
@@ -206,7 +206,7 @@ void loop()
     ledBState = false;
   }
 
-  digitalWrite(ledBPin, ledBState);
+
 }
 
 // Set color for RGB LED
@@ -214,7 +214,7 @@ void rgbLED(int r, int g, int b)
 {
   analogWrite(ledRPin, r);
   analogWrite(ledGPin, g);
-  analogWrite(ledGPin, b);
+  analogWrite(ledBPin, b);
 }
 
 // Function to press a key when a given button is pressed
