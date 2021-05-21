@@ -22,7 +22,9 @@
 #define button6Pin 4
 
 // Pins for the LED
-#define ledBPin 5
+#define ledRPin 3
+#define ledGPin 5
+#define ledBPin 6
 
 // Pin for the 2 position switch
 #define switchPin 15
@@ -38,9 +40,10 @@ void setup()
   pinMode(button5Pin, INPUT_PULLUP);
   pinMode(button6Pin, INPUT_PULLUP);
   pinMode(switchPin, INPUT_PULLUP);
-
+  pinMode(ledRPin, OUTPUT);
+  pinMode(ledGPin, OUTPUT);
   pinMode(ledBPin, OUTPUT);
-
+  
   Serial.begin(9600);
   Joystick.begin();
   Keyboard.begin();
@@ -164,7 +167,7 @@ void loop()
     // writeKeyWhenPressed(KEY_DOWN_ARROW, button6Val);
   }
 
-  // Party mode counter
+  // PARTY mode counter
   if(!switchVal && !potSwitchVal && button1Val && button2Val)
   {
     triggerCount++;
@@ -181,7 +184,7 @@ void loop()
 
   if(isPartyMode)
   {
-    /* What happens when it's party mode */
+    /* What happens when we party mode */
     ledCount++;
     if(ledCount > 5)
     {
@@ -191,7 +194,7 @@ void loop()
   }
   else
   {
-    /* What happens when it's NOT party mode */
+    /* What happens when we DON'T party mode */
     ledBState = false;
   }
 
